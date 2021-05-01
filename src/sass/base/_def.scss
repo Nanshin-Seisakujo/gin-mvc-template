@@ -45,14 +45,6 @@ $type-xxx-large: 275%;
 $max-screen-width: 960px;
 $max-screen-width-large: 1580px;
 
-/** grid */
-$block-columns-small: [max] 1fr [lg] repeat(4, [m] 3.6fr) [lg] 1fr [max];
-$block-columns-medium: [max] 1fr [lg] repeat(8, [m] 2.4fr) [lg] 1fr [max];
-$block-columns-large: [max] 1fr [lg] repeat(12, [m] 1.6fr) [lg] 1fr [max];
-$repeat-columns-small: [max] 1fr [lg] repeat(4, [m] 1fr) [lg] 1fr [max];
-$repeat-columns-medium: [max] 1fr [lg] repeat(8, [m] 1fr) [lg] 1fr [max];
-$repeat-columns-large: [max] 1fr [lg] repeat(12, [m] 1fr) [lg] 1fr [max];
-
 /** mq */
 $screen-medium: 57.5em;
 $screen-large: 89.5em;
