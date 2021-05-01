@@ -7,6 +7,8 @@ import (
 	"net/http"
 
 	"github.com/gin-contrib/cors"
+	"github.com/gin-contrib/sessions"
+	"github.com/gin-contrib/sessions/cookie"
 	"github.com/gin-gonic/gin"
 )
 
@@ -39,6 +41,13 @@ func NewRouter() *gin.Engine {
 
 	// auth middleware
 	router.Use(middlewares.AuthMiddleware())
+
+	// session middleware
+	store := cookie.NewStore([]byte("session_secret"))
+	router.Use(sessions.Sessions("session_name", store))
+
+	// session check middleware
+	router.Use(middlewares.SessionCheck())
 
 	// cors middleware
 	router.Use(cors.New(cors.Config{
