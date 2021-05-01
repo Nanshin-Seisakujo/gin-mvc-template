@@ -1,0 +1,77 @@
+/** color schema */
+$color-white: #fff;
+$color-black: #1d2d35;
+$color-gray: #777471;
+$color-stone: #edeae6;
+$color-beige: #f9f8f4;
+$color-stone-tint: #f6f4f2;
+$color-yellow: #f5d652;
+$color-canary: #fff5ca;
+$color-canary-tint: #fffae5;
+$color-cobalt: #0074e4;
+$color-sky: #b6dbff;
+$color-sky-tint: #daedfe;
+$color-sky-light: #eef8ff;
+$color-blurple: #5522fa;
+$color-lavender: #d5d2ff;
+$color-lavender-tint: #eae8fe;
+$color-purple: #7700a2;
+$color-pink: #cb84de;
+$color-pink-tint: #efdaf5;
+$color-salmon: #ec8580;
+$color-peach: #fee5da;
+$color-peach-tint: #fef2ed;
+$color-teal: #5ceace;
+$color-mint: #b3f8eb;
+$color-mint-tint: #d8f9f0;
+$color-shadow: rgba(0,0,0,0.13);
+$color-shadow-dark: rgba(0,0,0,0.21);
+$color-text: $color-black;
+$color-background: $color-beige;
+$color-sheet: $color-white;
+$color-neutral: $color-gray;
+$color-link: $color-cobalt;
+$color-accent: $color-blurple;
+
+/** spacing schema */
+$space-x-small: 0.25em;
+$space-small: 0.5em;
+$space-medium: 1em;
+$space-large: 2em;
+$space-x-large: 3em;
+$space-xx-large: 4em;
+$space-xxx-large: 6em;
+$space-navbar: 4em;
+
+/** text schema */
+$font-sans: 'YakuhanJP', 'Roboto','Helvetica Neue',helvetica,'Apple Color Emoji',arial,sans-serif;
+$font-serif: 'YakuhanMP','ShipporiMincho','游明朝','Yu Mincho',YuMincho,'Hiragino Mincho Pro',serif;
+$font-mono: monospace;
+$type-base: calc(1.1865em + 0.5vw);
+$type-base-medium: calc(0.6875em + 0.85vw);
+$type-base-large: 1.45em;
+$type-xxx-small: 55%;
+$type-xx-small: 65%;
+$type-x-small: 75%;
+$type-small: 85%;
+$type-medium: 100%;
+$type-large: 125%;
+$type-x-large: 150%;
+$type-xx-large: 200%;
+$type-xxx-large: 275%;
+
+/** screen */
+$max-screen-width: 960px;
+$max-screen-width-large: 1580px;
+
+/** grid */
+$block-columns-small: [max] 1fr [lg] repeat(4, [m] 3.6fr) [lg] 1fr [max];
+$block-columns-medium: [max] 1fr [lg] repeat(8, [m] 2.4fr) [lg] 1fr [max];
+$block-columns-large: [max] 1fr [lg] repeat(12, [m] 1.6fr) [lg] 1fr [max];
+$repeat-columns-small: [max] 1fr [lg] repeat(4, [m] 1fr) [lg] 1fr [max];
+$repeat-columns-medium: [max] 1fr [lg] repeat(8, [m] 1fr) [lg] 1fr [max];
+$repeat-columns-large: [max] 1fr [lg] repeat(12, [m] 1fr) [lg] 1fr [max];
+
+/** mq */
+$screen-medium: 57.5em;
+$screen-large: 89.5em;

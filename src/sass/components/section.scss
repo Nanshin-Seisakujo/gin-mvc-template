@@ -1,0 +1,22 @@
+@use "../base/def" as *;
+
+.page {
+    padding-top: $space-xx-large;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    max-width: 100%;
+    margin: 0px;
+    padding-top: $space-xx-large;
+    padding-bottom: $space-xx-large;
+    padding-left: 0px;
+    padding-right: 0px;
+    &.section--fill {
+        min-height: 100vh;
+        min-height: calc(var(--vh,1vh) * 100);
+        justify-content: center;
+    }
+}

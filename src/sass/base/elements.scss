@@ -1,0 +1,355 @@
+@use "./def" as *;
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+*::selection,
+*::-moz-selection {
+    color: $color-text;
+    background-color: $color-blurple;
+}
+
+html {
+    font-size: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scroll-padding: 10em 0 0 0;
+    height: -webkit-fill-available;
+    -webkit-text-size-adjust: 100%;
+    font-feature-settings: "palt";
+}
+
+body {
+    overflow-x: hidden;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: $font-sans;
+    font-size: $type-base;
+    color: $color-text;
+    column-rule: $color-text;
+    background-color: $color-sheet;
+    @supports (-webkit-touch-callout: none) {
+        height: -webkit-fill-available;
+    }
+    @media (min-width: $screen-medium) {
+        font-size: $type-base-medium;
+    }
+    @media (min-width: $screen-large) {
+        font-size: $type-base-large;
+    }
+}
+
+a {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    text-decoration-thickness: 0.1em;
+    text-decoration-width: 0.1em;
+}
+
+a, a:visited {
+    color: inherit;
+}
+
+a:hover {
+    color: $color-link;
+    text-decoration-color: $color-link;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: $space-medium 0 $space-x-small 0;
+    padding: 0;
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+h1 {
+    margin: 0 0 $space-x-small;
+    font-size: $type-xx-large;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    @media (min-width: $screen-medium) {
+        font-size: $type-xxx-large;
+    }
+}
+
+h2 {
+    font-size: calc($type-xx-large - 25%);
+    @media (min-width: $screen-medium) {
+        font-size: $type-xx-large;
+    }
+}
+
+h3 {
+    font-size: calc($type-x-large - 15%);
+    @media (min-width: $screen-medium) {
+        font-size: $type-x-large;
+    }
+}
+
+h4,
+h5,
+h6 {
+    font-size: $type-large;
+}
+
+p,
+ul,
+ol {
+    margin: 0 0 $space-medium 0;
+    padding: 0;
+    line-height: 1.5;
+}
+
+ul,
+ol {
+    margin-left: 1em;
+}
+
+li {
+    margin: 0 0 $space-small 0;
+}
+
+li ul,
+li ol {
+    margin: $space-small 0 $space-medium $space-medium;
+}
+
+small {
+    font-size: $type-x-small;
+    line-height: 1.5;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+img,
+svg,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+figure {
+    position: relative;
+    margin: $space-small auto $space-large auto;
+    width: 100%;
+    text-align: center;
+    & img {
+        display: block;
+        margin: 0 auto;
+        box-shadow: 2rem 2rem 6rem $color-shadow;
+    }
+    & a {
+        border-bottom: 0;
+    }
+}
+
+figcaption {
+    margin: $space-medium 0 $space-medium 0;
+    font-style: italic;
+    font-weight: normal;
+    font-size: $type-x-small;
+    line-height: 1.3;
+}
+
+picture {
+    display: block;
+    & > img {
+        display: block;
+    }
+}
+
+hr {
+    width: 100%;
+    height: 0.2rem;
+    display: block;
+    clear: both;
+    margin: $space-xx-large auto;
+    padding: 0;
+    border: 0;
+    background: linear-gradient(
+        to right,
+        $color-teal 0%,
+        $color-blurple 100%
+    );
+}
+
+blockquote {
+    quotes: none;
+    & p {
+        &::before {
+            content: '“';
+            display: inline;
+        }
+        &::after {
+            content: '”';
+            display: inline;
+        }
+    }
+    & cite {
+        display: block;
+        font-size: $type-x-small;
+        font-weight: 700;
+    }
+}
+
+embed,
+iframe,
+object {
+    max-width: 100%;
+    border: 0;
+}
+
+label {
+    display: block;
+    margin: 0.5em 0 0 0;
+    font-weight: normal;
+    font-size: $type-small;
+    letter-spacing: -0.02em;
+    line-height: 1.5;
+    text-align: left;
+}
+
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=tel],
+textarea,
+select {
+    transition: all .2s ease;
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 0.25em 0;
+    padding: 0.4em 0.6em;
+    font-family: $font-sans;
+    font-size: $type-small;
+    font-weight: 400;
+    text-align: inherit;
+    border: 0.2rem solid $color-mint;
+    color: $color-text;
+    background: linear-gradient(
+        45deg,
+        $color-mint 0%,
+        $color-canary 100%
+    );
+    border-radius: 1.5em;
+    vertical-align: middle;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    &:focus {
+        outline: none;
+        border-color: $color-blurple !important;
+    }
+}
+
+input[type=submit] {
+    margin: 0;
+    font-weight: 700;
+    text-align: inherit;
+}
+
+select {
+    padding: 0.35em 1.4em 0.35em 0.6em;
+    box-shadow: none;
+    background: $color-canary '' right 0.7em top 50% / 0.65em auto no-repeat;
+    & option {
+        font-weight: normal;
+    }
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    width: 2em;
+    height: 2em;
+    margin: 0;
+    cursor: pointer;
+    border: 0.2rem solid $color-mint;
+    transition: background .3s, border-color .3s;
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        border: 0.2em solid $color-white;
+        opacity: 0;
+    }
+    &:hover {
+        border-color: $color-purple;
+    }
+    &:focus:not(:focus-visible) {
+        outline: none;
+    }
+    &:checked {
+        background-color: $color-purple;
+        border-color: $color-purple;
+        &::after {
+            opacity: 1;
+            border-color: $color-white;
+        }
+    }
+}
+
+input[type='checkbox'] {
+    top: -0.15em;
+    border-radius: 0.5em;
+    &::after {
+        left: 0.55em;
+        top: 0.15em;
+        width: 0.5em;
+        height: 1em;
+        border-top: 0;
+        border-left: 0;
+        transform: rotate(45deg);
+    }
+}
+
+input[type='radio'] {
+    border-radius: 100%;
+    &::after {
+        width: 1em;
+        height: 1em;
+        top: 0.3em;
+        left: 0.3em;
+        background-color: $color-white;
+        border-radius: 100%;
+    }
+}
+
+table {
+    width: 100%;
+    border-spacing: 1rem;
+}
+
+thead {
+    text-align: left;
+}
+
+th {
+    background-color: $color-mint;
+}
+
+td {
+    border-bottom: 0.1rem solid $color-mint;
+    padding: 0 $space-x-small;
+}

@@ -1,0 +1,44 @@
+@use "../base/def" as *;
+
+.grid {
+    display: grid;
+    grid-template-columns: $block-columns-small;
+    gap: $space-small;
+    @media (min-width: $screen-medium) {
+        grid-template-columns: $block-columns-medium;
+        gap: $space-medium;
+    }
+    @media (min-width: $screen-large) {
+        grid-template-columns: $block-columns-large;
+        gap: $space-large;
+    }
+    &.grid--repeat {
+        grid-template-columns: $repeat-columns-small;
+        @media (min-width: $screen-medium) {
+            grid-template-columns: $repeat-columns-medium;
+        }
+        @media (min-width: $screen-large) {
+            grid-template-columns: $repeat-columns-large;
+        }
+    }
+    &.grid--nospace {
+        gap: 0px;
+    }
+}
+
+.grid__item {
+    grid-column: max/max 2;
+    &.grid__item--large {
+        grid-column: lg/lg 2;
+    }
+    &.grid__item--half {
+        grid-column-start: auto;
+        grid-column-end: span 6;
+        @media (min-width: $screen-medium) {
+            grid-column-end: span 5;
+        }
+        @media (min-width: $screen-large) {
+            grid-column-end: span 7;
+        }
+    }
+}

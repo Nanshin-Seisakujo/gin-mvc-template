@@ -1,0 +1,10 @@
+/** filter */
+.filter--blur {
+    backdrop-filter: saturate(180%) blur(5px);
+}
+
+.visually-hidden {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(1px,1px,1px,1px);
+}
