@@ -1,7 +1,7 @@
 package server
 
 import (
-	"kleiberman-app/app/config"
+	"gin-mvc/app/config"
 )
 
 func Init() {

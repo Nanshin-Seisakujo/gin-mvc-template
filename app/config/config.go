@@ -1,13 +1,21 @@
 package config
 
 import (
+	"encoding/json"
+	"io/ioutil"
 	"log"
 	"path/filepath"
 
 	"github.com/spf13/viper"
 )
 
+type Assets struct {
+	Css string `json:"css.css"`
+	Js  string `json:"main.js"`
+}
+
 var config *viper.Viper
+var assets Assets
 
 func Init(env string) {
 	var err error
@@ -23,6 +31,15 @@ func Init(env string) {
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	bytes, err := ioutil.ReadFile("./.data/manifest.json")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	if err := json.Unmarshal(bytes, &assets); err != nil {
+		log.Fatal(err)
+	}
 }
 
 func relativePath(basedir string, path *string) {
@@ -34,4 +51,8 @@ func relativePath(basedir string, path *string) {
 
 func GetConfig() *viper.Viper {
 	return config
+}
+
+func GetAssets() Assets {
+	return assets
 }

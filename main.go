@@ -3,9 +3,9 @@ package main
 import (
 	"flag"
 	"fmt"
-	"kleiberman-app/app/config"
-	"kleiberman-app/app/db"
-	"kleiberman-app/app/server"
+	"gin-mvc/app/config"
+	"gin-mvc/app/db"
+	"gin-mvc/app/server"
 	"log"
 	"os"
 

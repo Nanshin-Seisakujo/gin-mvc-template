@@ -1,4 +1,4 @@
-module kleiberman-app
+module gin-mvc
 
 go 1.16
 

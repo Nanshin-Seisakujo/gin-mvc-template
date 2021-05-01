@@ -1,7 +1,7 @@
 package middlewares
 
 import (
-	"kleiberman-app/app/config"
+	"gin-mvc/app/config"
 	"strings"
 
 	"github.com/gin-gonic/gin"
