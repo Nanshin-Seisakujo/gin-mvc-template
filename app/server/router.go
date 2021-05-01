@@ -6,6 +6,7 @@ import (
 	"gin-mvc/app/middlewares"
 	"net/http"
 
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
 
@@ -38,6 +39,14 @@ func NewRouter() *gin.Engine {
 
 	// auth middleware
 	router.Use(middlewares.AuthMiddleware())
+
+	// cors middleware
+	router.Use(cors.New(cors.Config{
+		AllowOrigins:     []string{"https://example.com"},
+		AllowMethods:     []string{"GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"},
+		AllowHeaders:     []string{"Accept", "Origin"},
+		AllowCredentials: true,
+	}))
 
 	return router
 }
